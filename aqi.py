@@ -112,6 +112,7 @@ def main():
 
     sampling_period = 60*5  # default == 5 in minutes (also as a countdown)
     sampling_rate = sample_size // sampling_period
+    default_minute = 60
 
     next_time = time.time()
     print("PM2.5 sampled value for each station: ")
@@ -127,7 +128,7 @@ def main():
         average_of_PM25.append(avg_PM25)
 
         # suspends (waits) execution of the current thread (send request to API every n minutes
-        next_time += sampling_period // sample_size
+        next_time += default_minute
         sleep_time = next_time - time.time()
         if sleep_time > 0:
             time.sleep(sleep_time)
