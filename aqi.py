@@ -140,7 +140,7 @@ def main():
         if sampling_period < sampling_rate:
             break
 
-    print(average_of_PM25)
+    # print(average_of_PM25)
     print("\n")
     print("Overall PM2.5 average of all stations over n (default = 5) "
           "minutes of sampling: {:.2f}".format(statistics.mean(average_of_PM25)))
